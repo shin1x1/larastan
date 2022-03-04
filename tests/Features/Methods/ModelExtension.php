@@ -234,9 +234,15 @@ class ModelExtension
     }
 
     /** @phpstan-return Builder<User> */
-    public function testNewQuery(): Builder
+    public function testQuery(): Builder
     {
         return User::query();
+    }
+
+    /** @phpstan-return Builder<User> */
+    public function testNewQuery(User $user): Builder
+    {
+        return $user->newQuery();
     }
 
     /** @phpstan-return Collection<int, User> */

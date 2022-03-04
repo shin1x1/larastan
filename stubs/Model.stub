@@ -23,6 +23,13 @@ abstract class Model implements \JsonSerializable, \ArrayAccess
      * @return \Illuminate\Database\Eloquent\Builder<static>
      */
     public static function with($relations);
+
+    /**
+     * Get a new query builder for the model's table.
+     *
+     * @return \Illuminate\Database\Eloquent\Builder<static>
+     */
+    public function newQuery();
 }
 
 class ModelNotFoundException extends \RuntimeException {}
